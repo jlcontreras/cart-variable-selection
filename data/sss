@@ -1,0 +1,184 @@
+T
+printcp(T)
+local({pkg <- select.list(sort(.packages(all.available = TRUE)),graphics=TRUE)
+if(nchar(pkg)) library(pkg, character.only=TRUE)})
+printcp(T)
+A = printcp(T)
+A
+A[,5]
+A[,4]
+which.min(A[,4])
+newError= A[which.min(A[,4]),4] +  A[which.min(A[,4]),5] 
+newError
+A[which.min(A[,4]),4]
+ A[which.min(A[,4]),5] 
+min(which(A[,4] > newError))
+min(which(A[,4] < newError))
+help(rpart)
+library(caret)
+local({pkg <- select.list(sort(.packages(all.available = TRUE)),graphics=TRUE)
+if(nchar(pkg)) library(pkg, character.only=TRUE)})
+utils:::menuInstallPkgs()
+library(caret)
+tc <- trainControl("cv",10)
+rpart.grid <- expand.grid(.cp=0.2)
+printcp(T)
+plotcp(T)
+spam
+tainingSet = spam[0:460]
+tainingSet = spam[0:460,]
+tainingSet = spam[460,4601,]
+tainingSet = spam[460:4601,]
+tainingSet
+rpart.tree <- rpart(Species ~ ., data=train.set)
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.0000001))
+finalTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.0000001))
+predictions <- predict(finalTree, spam[0:460], type="class")
+predictions <- predict(finalTree, spam[0:460,], type="class")
+table(spam[0:460,]$yesno,predictions)
+predictions
+res = table(spam[0:460,]$yesno,predictions)
+res
+res[1,1]
+error = res[2,1]/(res[2,1]+res[2,2])
+error
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.000001))
+finalTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.000001))
+predictions <- predict(finalTree, spam[0:460,], type="class")
+res = table(spam[0:460,]$yesno,predictions)
+error2 = res[2,1]/(res[2,1]+res[2,2])
+error2
+finalTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.0001))
+predictions <- predict(finalTree, spam[0:460,], type="class")
+res = table(spam[0:460,]$yesno,predictions)
+error2 = res[2,1]/(res[2,1]+res[2,2])
+error2
+finalTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.1))
+predictions <- predict(finalTree, spam[0:460,], type="class")
+res = table(spam[0:460,]$yesno,predictions)
+error3 = res[2,1]/(res[2,1]+res[2,2])
+error3
+predictions <- predict(finalTree, spam[0:460,], type="class")alTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.1))
+> predictions <- predict(finalTree, spam[0:460,], type="class")
+> res = table(spam[0:460,]$yesno,predictions)
+> error3 = res[2,1]/(res[2,1]+res[2,2])
+> error3
+trainingSet = spam[0:1533,]
+finalTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.1))
+predictions <- predict(finalTree, spam[0:1533,], type="class")
+res = table(spam[0:1533,]$yesno,predictions)
+error = res[2,1]/(res[2,1]+res[2,2])
+error
+ finalTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.1))
+predictions <- predict(finalTree, spam[0:1533,], type="class")
+ res = table(spam[0:1533,]$yesno,predictions)
+finalTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.001))
+predictions <- predict(finalTree, spam[0:1533,], type="class")
+res = table(spam[0:1533,]$yesno,predictions)
+error2 = res[2,1]/(res[2,1]+res[2,2])
+error2
+finalTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.00001))
+predictions <- predict(finalTree, spam[0:1533,], type="class")
+res = table(spam[0:1533,]$yesno,predictions)
+error3 = res[2,1]/(res[2,1]+res[2,2])
+error3
+trainingSet = spam[1533:4601,]
+finalTree = rpart(yesno~.,data = tainingSet,control=rpart.control(minsplit=1,cp=0.00001))
+ res = table(spam[0:1533,]$yesno,predictions)
+error = res[2,1]/(res[2,1]+res[2,2])
+error
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.00001))
+ res = table(spam[0:1533,]$yesno,predictions)
+predictions <- predict(finalTree, spam[0:1533,], type="class")
+res = table(spam[0:1533,]$yesno,predictions)
+error = res[2,1]/(res[2,1]+res[2,2])
+error
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.00001))
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.001))
+ predictions <- predict(finalTree, spam[0:1533,], type="class")
+res = table(spam[0:1533,]$yesno,predictions)
+error2 = res[2,1]/(res[2,1]+res[2,2])
+error2
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.1))
+ predictions <- predict(finalTree, spam[0:1533,], type="class")
+res = table(spam[0:1533,]$yesno,predictions)
+error3 = res[2,1]/(res[2,1]+res[2,2])
+error3
+trainingSet = spam[0:1533,]+spam[3066:4601,]
+trainingSet = rbind(spam[0:1533,],spam[3066:4601,])
+trainingSet
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.1))
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.00001))
+ predictions <- predict(finalTree, spam[1533:3066,], type="class")
+res = table(spam[1533:3066,]$yesno,predictions)
+error4 = res[2,1]/(res[2,1]+res[2,2])
+error4
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.1))
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.001))
+predictions <- predict(finalTree, spam[1533:3066,], type="class")
+res = table(spam[1533:3066,]$yesno,predictions)
+error4 = res[2,1]/(res[2,1]+res[2,2])
+error5 = res[2,1]/(res[2,1]+res[2,2])
+error5
+error4 = 0.2989324
+ finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.001))
+ finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.1))
+predictions <- predict(finalTree, spam[1533:3066,], type="class")
+res = table(spam[1533:3066,]$yesno,predictions)
+error6 = res[2,1]/(res[2,1]+res[2,2])
+error6
+trainingSet = spam[0:3066,]
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.00001))
+ predictions <- predict(finalTree, spam[1533:3066,], type="class")
+ predictions <- predict(finalTree, spam[3066:4601,], type="class")
+ res = table(spam[1533:3066,]$yesno,predictions)
+ res = table(spam[3066:4601,]$yesno,predictions)
+error7 = res[2,1]/(res[2,1]+res[2,2])
+error7
+res
+error7 = res[1,2]/(res[1,2]+res[1,1])
+error7
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.001))
+predictions <- predict(finalTree, spam[1533:3066,], type="class")
+res = table(spam[1533:3066,]$yesno,predictions)
+error8 = res[1,2]/(res[1,2]+res[1,1])
+error8
+finalTree = rpart(yesno~.,data = trainingSet,control=rpart.control(minsplit=1,cp=0.1))
+ predictions <- predict(finalTree, spam[1533:3066,], type="class")
+res = table(spam[1533:3066,]$yesno,predictions)
+error9 = res[1,2]/(res[1,2]+res[1,1])
+error9
+firstError = c(error1,error4,error6
+=a
+q
+firstError = c(error,error4,error7)
+st(firstError)
+local({pkg <- select.list(sort(.packages(all.available = TRUE)),graphics=TRUE)
+if(nchar(pkg)) library(pkg, character.only=TRUE)})
+st(firstError)
+sd(firstError)
+secondError = c(error2,error5,error8)
+sdSecond = sd(secondError)
+sdSecond
+sdFirst = 0.1103683
+thirdError = c(error3,error6,error9)
+sdThird = sd(thirdError)
+sdThird
+mean(firstError)
+mean1 = mean(firstError)
+mean(secondError)
+mean2 = mean(secondError)
+mean3 = mean(thirdError)
+mean =c(mean1,mean2,mean3)
+mean
+stError = c(sdFirst,sdSecond,sdThird)
+stError
+newError= mean[which.min(mean)] +  stError[which.min(mean)]
+newError
+BestModel = min(which(mean < newError))
+bestModel
+mean
+q()
+save.image("C:\\Users\\Lorenzo Frigerio\\Desktop\\Fwd%3a_\\newHistory")
+save.image("C:\\Users\\Lorenzo Frigerio\\Desktop\\Fwd%3a_\\aaa")
+save.image("C:\\Users\\Lorenzo Frigerio\\Desktop\\Fwd%3a_\\aaaw")
